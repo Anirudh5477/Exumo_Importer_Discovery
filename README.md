@@ -327,6 +327,3 @@ All three runs below were performed against the live pipeline. Full JSON outputs
 
 ---
 
-## License
-
-MIT
