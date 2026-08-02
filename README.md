@@ -1,4 +1,4 @@
-﻿# Exumo — AI Importer Discovery Engine
+# Exumo — AI Importer Discovery Engine
 
 > **Find verified B2B importers and wholesalers for any product in any country — in minutes, not weeks.**
 
@@ -13,7 +13,7 @@ Exumo is a full-stack AI pipeline that combines LLM-powered query expansion, liv
 3. [Data Sources](#data-sources)
 4. [Ranking Methodology](#ranking-methodology)
 5. [Assumptions & Limitations](#assumptions--limitations)
-6. [Setup Instructions](#setup-instructions)
+6. [Offline Cache Mode](#offline-cache-mode)
 7. [Sample Results](#sample-results)
 
 ---
@@ -66,7 +66,7 @@ The system follows a **sequential 6-stage pipeline** orchestrated by `main.py`, 
 ### File Structure
 
 ```
-exumo_ai/
+Importer_Discovery_Engine/
 ├── app.py                    # Flask web server & REST API
 ├── main.py                   # End-to-end pipeline orchestrator
 ├── config.py                 # API keys, rate limits, domain blacklist
@@ -194,72 +194,46 @@ if phone.startswith("+86") and country != "China":
 
 ---
 
-## Setup Instructions
-
-### Prerequisites
-
-- Python 3.10+
-- A [Groq API key](https://console.groq.com/) (free tier works)
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/exumo_ai.git
-cd exumo_ai
-```
-
-### 2. Create and Activate a Virtual Environment
-
-```bash
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# macOS / Linux
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure Your API Key
-
-Create a `.env` file in the project root:
-
-```env
-GROQ_API_KEY="your_groq_api_key_here"
-```
-
-> **Never commit your `.env` file.** Add it to `.gitignore`.
-
-### 5. Run the Web Dashboard
-
-```bash
-python app.py
-```
-
-Open **http://127.0.0.1:5000** in your browser. Enter a product, country, and number of results, then click **▶ Run Discovery**.
-
-### 6. Run via CLI (Optional)
-
-```bash
-python main.py --product "Ceramic Tiles" --country "Germany" --top_n 10
-```
-
-Results are saved to `outputs/ceramic_tiles_germany_importers.json`.
-
-### Environment Variables Reference
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `GROQ_API_KEY` | ✅ Yes | Groq API key for all LLM calls |
-| `GEMINI_API_KEY` | ❌ Optional | Reserved for future Gemini integration |
-
 ---
+
+## Offline Cache Mode
+
+Exumo supports running entirely **without any API keys** by serving pre-stored results from the `outputs/` directory. This is useful for demos, portfolio reviews, or when API quotas are exhausted.
+
+### How It Works
+
+When a user submits a query, the app first checks for a matching cached JSON file before touching the live pipeline:
+
+```
+User clicks ▶ Run Discovery
+        │
+        ▼
+GET /api/cached  ──── match found ──▶  Return pre-stored JSON instantly ✅
+        │
+     404 (no match)
+        │
+        ▼
+Fall back to /api/discover  (live AI pipeline — requires API key)
+```
+
+### Filename Convention
+
+Cached files follow the pattern: `{product_slug}_{country_slug}_importers.json`
+
+Matching is **fuzzy** — spaces become underscores and casing is ignored, so `"Ceramic Tiles"` + `"Germany"` → `ceramic_tiles_germany_importers.json`.
+
+### Pre-Stored Searches
+
+| Product | Country | File |
+|---------|---------|------|
+| Ceramic Tiles | Germany | [`ceramic_tiles_germany_importers.json`](./outputs/ceramic_tiles_germany_importers.json) |
+| Wood | France | [`wood_france_importers.json`](./outputs/wood_france_importers.json) |
+| Leather Gloves | Canada | [`leather_gloves_canada_importers.json`](./outputs/leather_gloves_canada_importers.json) |
+| Automotive Spare Parts | United Kingdom | [`automotive_spare_parts_united_kingdom_importers.json`](./outputs/automotive_spare_parts_united_kingdom_importers.json) |
+
+### Adding New Cache Entries
+
+Simply save any pipeline output JSON into the `outputs/` directory following the naming convention above. No code changes required — the app auto-discovers files on startup.
 
 ## Sample Results
 
@@ -273,9 +247,7 @@ All three runs below were performed against the live pipeline. Full JSON outputs
 
 **Screenshot:**
 
-<!-- ADD SCREENSHOT HERE -->
-<!-- Replace the line below with: ![Ceramic Tiles Germany](./screenshots/ceramic_tiles_germany.png) -->
-> 📸 _Screenshot placeholder — add as `./screenshots/ceramic_tiles_germany.png`_
+![Ceramic Tiles Germany](./screenshots/ceramic_tiles_germany.jpeg)
 
 **Top 5 Results:**
 
@@ -294,30 +266,28 @@ All three runs below were performed against the live pipeline. Full JSON outputs
 
 ---
 
-### Sample 2 — Wood → France
+### Sample 2 — Leather Gloves → Canada
 
-**Query:** `Wood` · `France` · Top 10
+**Query:** `Leather Gloves` · `Canada` · Top 10
 
 **Screenshot:**
 
-<!-- ADD SCREENSHOT HERE -->
-<!-- Replace the line below with: ![Wood France](./screenshots/wood_france.png) -->
-> 📸 _Screenshot placeholder — add as `./screenshots/wood_france.png`_
+![Leather Gloves Canada](./screenshots/leather_gloves_canada.jpeg)
 
 **Top 5 Results:**
 
 | Rank | Company | Score | Product | Geo | Import | Cred | Scale |
 |------|---------|-------|---------|-----|--------|------|-------|
-| #1 | Henry Timber | **92** | 30/30 | 15/15 | 25/25 | 7/15 | 15/15 |
-| #2 | Farin et Fils | **92** | 30/30 | 15/15 | 25/25 | 15/15 | 7/15 |
-| #3 | FrenchTimber | **92** | 30/30 | 15/15 | 25/25 | 7/15 | 15/15 |
-| #4 | Grosjean Solutions Bois | **85** | 30/30 | 15/15 | 10/25 | 15/15 | 15/15 |
-| #5 | EG.Bois | **85** | 30/30 | 15/15 | 10/25 | 15/15 | 15/15 |
+| #1 | Mega Wholesaler Inc | **85** | 30/30 | 15/15 | 10/25 | 15/15 | 15/15 |
+| #2 | Wilson Wholesale Supply | **77** | 30/30 | 15/15 | 10/25 | 7/15 | 15/15 |
+| #3 | Gregg Distributors | **77** | 30/30 | 15/15 | 10/25 | 7/15 | 15/15 |
+| #4 | Milwaukee Tool | **62** | 15/30 | 15/15 | 10/25 | 7/15 | 15/15 |
+| #5 | Canadian Tire | **62** | 15/30 | 15/15 | 10/25 | 7/15 | 15/15 |
 
 **Key observations:**
-- Three companies scored 92/100 — the highest across all sample runs. The French timber sector has well-structured websites with clear import language.
-- Henry Timber explicitly states imports from South-East Asia, Africa, and the Americas → maximum `import_signal` of 25.
-- French-language queries (`négoce bois`, `grossiste bois France`) surfaced French SMEs not findable via English-only searches.
+- Mega Wholesaler Inc leads with 85 — a verified Canadian wholesale supplier with email, phone, and LinkedIn all scraped.
+- 7 total results returned, showing the pipeline self-limits to verified importers rather than padding with low-confidence entries.
+- Walmart.ca appeared in search results but scored low due to B2C retail signals — demonstrating the scale-fit penalty working as intended.
 
 ---
 
@@ -327,9 +297,7 @@ All three runs below were performed against the live pipeline. Full JSON outputs
 
 **Screenshot:**
 
-<!-- ADD SCREENSHOT HERE -->
-<!-- Replace the line below with: ![Automotive Parts UK](./screenshots/automotive_parts_uk.png) -->
-> 📸 _Screenshot placeholder — add as `./screenshots/automotive_parts_uk.png`_
+![Automotive Parts UK](./screenshots/automotive_parts_uk.png)
 
 **Top 5 Results:**
 
@@ -354,6 +322,7 @@ All three runs below were performed against the live pipeline. Full JSON outputs
 |------|---------|---------|-----------|
 | [`ceramic_tiles_germany_importers.json`](./outputs/ceramic_tiles_germany_importers.json) | Ceramic Tiles | Germany | 10 |
 | [`wood_france_importers.json`](./outputs/wood_france_importers.json) | Wood | France | 10 |
+| [`leather_gloves_canada_importers.json`](./outputs/leather_gloves_canada_importers.json) | Leather Gloves | Canada | 7 |
 | [`automotive_spare_parts_united_kingdom_importers.json`](./outputs/automotive_spare_parts_united_kingdom_importers.json) | Automotive Spare Parts | United Kingdom | 5 |
 
 ---

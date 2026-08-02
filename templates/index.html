@@ -827,11 +827,21 @@
     };
 
     try {
-      const resp = await fetch('/api/discover', {
+      // 1. Try pre-stored cache first (no API keys needed)
+      let resp = await fetch('/api/cached', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
+
+      // 2. If no cache hit, fall back to the live pipeline
+      if (resp.status === 404) {
+        resp = await fetch('/api/discover', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      }
 
       const data = await resp.json();
       stopStatusCycle();
