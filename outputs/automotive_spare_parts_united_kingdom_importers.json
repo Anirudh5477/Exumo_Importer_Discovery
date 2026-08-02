@@ -1,0 +1,106 @@
+[
+  {
+    "company_name": "D&A Factors",
+    "website": "https://www.dafactors.co.uk/",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly mentions stocking car parts and accessories, indicating a strong focus on automotive spare parts, which is the target product. The company is headquartered in the United Kingdom, as indicated by their website and regional branches, making it a perfect geographic fit. Although the company does not explicitly mention importing, their affiliation with GROUPAUTO, a successful trading group in the independent aftermarket, and their ability to deliver parts and products, suggests they may have some level of import capability, but it's not explicitly stated. Both a valid email and phone number are available for the company, indicating high credibility and ease of contact. With six local trade counters, over 1,000,000 individual products available, and same-day delivery, the company demonstrates characteristics of a large-scale B2B wholesaler or distributor.",
+    "contact_email": "dundee@dafactors.co.uk",
+    "contact_phone": "+441382228202",
+    "contact_linkedin": "https://www.linkedin.com/company/d.-&-a.-factors-dundee-limited/about",
+    "sources_used": [
+      "https://www.dafactors.co.uk/",
+      "https://www.dafactors.co.uk/about-us/",
+      "https://www.dafactors.co.uk/find-contact/"
+    ]
+  },
+  {
+    "company_name": "Jivaji Auto Factors Ltd",
+    "website": "https://jivaji.co.uk/",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly sells automotive spare parts, including brake pads and windscreen wipers, which are directly related to the target product of automotive spare parts. The company is headquartered in the United Kingdom, with a base in Birmingham and distribution to stores around England and Wales, indicating a strong geographic fit. Although the company does not explicitly mention importing, they do state that they are constantly negotiating with suppliers, which could imply global sourcing, but there is no clear evidence of cross-border importing. Both a valid email and phone number are available for the company, indicating a high level of credibility and ease of contact. The company distributes to over 100 stores and has been in operation since 1973, indicating a large-scale wholesale supplier with significant reach and experience.",
+    "contact_email": "sales@jivaji.com",
+    "contact_phone": "+441216877768",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://jivaji.co.uk/",
+      "https://jivaji.co.uk/contact/",
+      "https://jivaji.co.uk/about-us",
+      "https://jivaji.co.uk/catalog/product_compare/"
+    ]
+  },
+  {
+    "company_name": "Interex Automotive",
+    "website": "https://www.interexautomotive.com/",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly deals with automotive spare parts, including vehicle parts and equipment for various industries, making them a strong match for the target product. The company is headquartered in the United Kingdom, with a provided UK address and contact information, indicating a strong geographic fit. Although the company is an exporter of automotive spare parts rather than an importer, their business model involves working with manufacturers and supplying parts globally, which could imply potential for importing or sourcing parts from abroad. Both a valid email and phone number were found for the company, indicating high credibility and ease of contact. The company's language suggests a large-scale B2B wholesaler or distributor, given their global customer base, wide range of products, and competitive pricing strategy.",
+    "contact_email": "sales@interexautomotive.com",
+    "contact_phone": "+441449721700",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.interexautomotive.com/",
+      "https://www.interexautomotive.com/contact/",
+      "https://www.interexautomotive.com/about/"
+    ]
+  },
+  {
+    "company_name": "Auto Parts UK",
+    "website": "https://auto-parts-uk.com/",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly deals with automotive core and catalytic converters, and also supplies other auto parts, indicating a strong match with the target product of automotive spare parts. The company is headquartered near London, within the United Kingdom, indicating a strong geographic fit for the target country. Although the company does purchase core components from garages nationwide and supplies parts worldwide, there is no explicit evidence of global sourcing or importing of automotive spare parts, but they do arrange international delivery pick-ups. Both a valid email and phone number are available for the company, indicating high credibility as a potential buyer or importer. The company has expanded to a second factory, manages a warehouse, and has a fleet of vehicles, indicating a significant scale of operations, likely beyond that of a small retailer.",
+    "contact_email": "dpfclean@autoparts-uk.com",
+    "contact_phone": "+442081441414",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://auto-parts-uk.com/",
+      "https://auto-parts-uk.com/contact-us/"
+    ]
+  },
+  {
+    "company_name": "Allied Parts",
+    "website": "https://alliedparts.co.uk/",
+    "relevance_score": 77,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly distributes automotive spare parts, including genuine and after-market parts, which matches the target product. The company is headquartered and primarily operating in the United Kingdom, with hubs in Glasgow, Edinburgh, and Aberdeen, indicating a strong geographic fit. There is no explicit evidence of global sourcing or importing, but the company does distribute a huge range of parts, suggesting potential for cross-border importing. Only the phone number is available, while the email is missing, indicating incomplete contact information. The company is described as the UK's largest independent parts distributor, with a large stock of over 3 million items and a significant delivery network, indicating a large-scale B2B operation.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+448005879622",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://alliedparts.co.uk/",
+      "https://alliedparts.co.uk/contact-our-specialists/"
+    ]
+  }
+]

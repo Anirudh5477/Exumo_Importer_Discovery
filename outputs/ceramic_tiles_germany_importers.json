@@ -1,0 +1,212 @@
+[
+  {
+    "company_name": "Villeroy & Boch",
+    "website": "https://pro.villeroy-boch.com/en/cz/tiles/trade-craft/contact/sales-germany-region-south",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly mentions 'Tiles' and 'ceramic' in their product categories, indicating a strong match with the target product of Ceramic Tiles. The company has a dedicated sales region for Germany, with multiple contact persons and locations within the country, indicating they are primarily operating in Germany. There is no explicit evidence of global sourcing or importing, but the company's international presence and product offerings suggest they may engage in cross-border trade, although this is not explicitly stated. Although the initial contact completeness indicated missing email, the scraped web content reveals multiple email addresses, along with phone and fax numbers, for different contact persons, suggesting a high level of credibility. The company's extensive product range, dedicated sales support, and presence across different regions suggest they are a large-scale B2B wholesaler or distributor.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+491736682557",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://pro.villeroy-boch.com/en/cz/tiles/trade-craft/contact/sales-germany-region-south",
+      "https://pro.villeroy-boch.com/en/cz/kitchen/products",
+      "https://pro.villeroy-boch.com/en/cz/dining-lifestyle/hospitality/about-us",
+      "https://pro.villeroy-boch.com/en/cz/dining-lifestyle/contact/contact-form"
+    ]
+  },
+  {
+    "company_name": "Granitprofi24",
+    "website": "https://granitprofi24.de/produkt/feinsteinfliesen-murano-120x60x1cm-poliert/",
+    "relevance_score": 77,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 7
+    },
+    "match_reason": "The company explicitly sells ceramic tiles, as evidenced by the product description of 'Murano Feinsteinzeug Fliesen' on their website, which matches the target product. The company is headquartered or primarily operating in Germany, as indicated by their website domain '.de' and the presence of German language content. There is no explicit evidence of global sourcing or importing on the provided website content, but the company does sell products that could be imported, thus a general B2B wholesale language is implied. Both a valid email and phone number are available for the company, indicating a high level of credibility and ease of contact. The company's website and product offerings suggest a smaller retailer or unclear scale, as there is no explicit language indicating a large-scale B2B wholesaler or distributor.",
+    "contact_email": "info@granitprofi24.de",
+    "contact_phone": "+497022905608",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://granitprofi24.de/produkt/feinsteinfliesen-murano-120x60x1cm-poliert/",
+      "https://granitprofi24.de/about/",
+      "https://granitprofi24.de/contact/"
+    ]
+  },
+  {
+    "company_name": "Villeroy & Boch",
+    "website": "https://www.villeroy-boch.de/haendler/",
+    "relevance_score": 62,
+    "score_breakdown": {
+      "product_match": 15,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company Villeroy & Boch does sell related broad categories such as Dining & Lifestyle and Bad & Wellness products, which could encompass ceramic tiles, but the exact product is not the main focus. The company Villeroy & Boch is headquartered or primarily operating in Germany as indicated by their German website and phone number. There is no explicit evidence of global sourcing, importing, or being an exclusive foreign distributor, but the company's size and international reputation suggest potential import activities. Only one contact method, a phone number, was found, while the email is missing, which reduces the credibility score. The language on the website indicates a large-scale B2B wholesaler, distributor, or chain, given their extensive product range and customer service infrastructure.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+80068648110",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.villeroy-boch.de/haendler/",
+      "https://www.villeroy-boch.de/service/kontakt/"
+    ]
+  },
+  {
+    "company_name": "Bunzlauer Großhandel",
+    "website": "https://www.bunzlauergrosshandel.de/en",
+    "relevance_score": 62,
+    "score_breakdown": {
+      "product_match": 15,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 7
+    },
+    "match_reason": "The company sells Polish Pottery which is related to ceramic products, but there is no explicit mention of ceramic tiles, suggesting a broader category focus. The company has a website with a German top-level domain and an English version, indicating it operates in Germany. The company mentions 'Polish Pottery' which implies they import products from Poland, but there's no explicit statement about global sourcing or being an exclusive distributor. Both a valid email and phone number are available for the company, indicating high credibility. The company's language and the presence of a wholesale website suggest it could be a medium to large-scale operation, but the exact scale is unclear.",
+    "contact_email": "support@bunzlauergrosshandel.de",
+    "contact_phone": "+4915771103782",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.bunzlauergrosshandel.de/en",
+      "https://www.bunzlauergrosshandel.de/en/contact",
+      "https://www.bunzlauergrosshandel.de/en/contact"
+    ]
+  },
+  {
+    "company_name": "HARO",
+    "website": "https://www.haro.com/en/",
+    "relevance_score": 62,
+    "score_breakdown": {
+      "product_match": 15,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company primarily deals with parquet and wooden flooring, which is related to but not the main focus of ceramic tiles. The company is made in Germany and has a website with a German-focused campaign, indicating they are headquartered or primarily operating in Germany. There is no explicit evidence of global sourcing or importing, but the company does mention high-quality and exclusive products, which could imply international sourcing without explicitly stating it. Only the phone number is available, while the email is missing, indicating incomplete contact information. The company's language and product offerings suggest a larger scale operation focused on B2B or high-end consumers, given the emphasis on exclusivity and luxury.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+498031700714",
+    "contact_linkedin": "https://www.linkedin.com/company/hamberger-flooring",
+    "sources_used": [
+      "https://www.haro.com/en/",
+      "https://www.haro.com/en/products/parquet/assortment/",
+      "https://www.haro.com/en/about-us/brand-haro/",
+      "https://www.haro.com/en/contact/"
+    ]
+  },
+  {
+    "company_name": "Fischer's Lagerhaus",
+    "website": "https://www.fischers-lagerhaus.de/unsere-standorte/huerth/?srsltid=AfmBOor0xumg_34uYdYkq_uRmoInsD3FVCWbqQ3ksfqUE6tNbP1hvITj",
+    "relevance_score": 62,
+    "score_breakdown": {
+      "product_match": 15,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 7
+    },
+    "match_reason": "The company primarily deals with furniture and home accessories, but there is no explicit mention of ceramic tiles, suggesting a related broad category focus. The company is headquartered in Germany, as indicated by its address and contact information, making it a strong geographic fit. The company mentions a global network of partner workshops, implying potential import activities, but there is no explicit evidence of global sourcing or importing of ceramic tiles. Both a valid email and phone number were found for the company, indicating high credibility and ease of contact. The company has a physical store with a significant sales floor area and multiple parking spaces, suggesting a moderate to large scale operation, but the exact scale in terms of B2B wholesaling is unclear.",
+    "contact_email": "t.tran@fischers-lagerhaus.de",
+    "contact_phone": "+492233965703",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.fischers-lagerhaus.de/unsere-standorte/huerth/?srsltid=AfmBOor0xumg_34uYdYkq_uRmoInsD3FVCWbqQ3ksfqUE6tNbP1hvITj",
+      "https://www.fischers-lagerhaus.de/wohnkultur/bad/pflegeprodukte/",
+      "https://www.fischers-lagerhaus.de/kontakt/"
+    ]
+  },
+  {
+    "company_name": "Ricchetti Group",
+    "website": "https://www.ricchetti-group.com/en/cinca",
+    "relevance_score": 44,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 7,
+      "import_signal": 0,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly produces and distributes ceramic floor tiles, which matches the target product of Ceramic Tiles. The company operates in major markets including Germany, where it exports its production, indicating a presence in the target country. There is no explicit evidence of the company importing ceramic tiles, but rather exporting its own production to over 70 countries, including Germany. Only the phone number is available, while the email is missing, indicating incomplete contact information. The company has around 400 employees, four manufacturing units, and a significant production capacity, indicating a large-scale operation.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+3905361670200",
+    "contact_linkedin": "https://www.linkedin.com/company/gruppo-cerdisa-ricchetti",
+    "sources_used": [
+      "https://www.ricchetti-group.com/en/cinca",
+      "https://www.ricchetti-group.com/en/gcr-products"
+    ]
+  },
+  {
+    "company_name": "Grespania",
+    "website": "https://www.grespania.com/en/profesionals/distributors",
+    "relevance_score": 28,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 0,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly deals with ceramic materials, which includes the target product Ceramic Tiles, indicating a strong product match. There is no explicit evidence in the provided text that Grespania is headquartered or primarily operating in Germany, which reduces the geographic fit. The company collaborates with distributors and offers support for the ceramic sector, but there is no explicit mention of importing or global sourcing, reducing the import signal. Both a valid email and phone number are available for the company, indicating high credibility. The company's language indicates a large-scale operation with comprehensive support for distributors and stores, suggesting a large-scale B2B wholesaler or distributor.",
+    "contact_email": "info@grespania.com",
+    "contact_phone": "+34964344411",
+    "contact_linkedin": "https://www.linkedin.com/company/grespaniaceramica",
+    "sources_used": [
+      "https://www.grespania.com/en/profesionals/distributors",
+      "https://www.grespania.com/en/products",
+      "https://www.grespania.com/en/contact",
+      "https://www.grespania.com/en/about-us"
+    ]
+  },
+  {
+    "company_name": "Marazzi",
+    "website": "https://www.marazzigroup.com/",
+    "relevance_score": 22,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 0,
+      "import_signal": 10,
+      "credibility": 0,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly mentions ceramic and porcelain tiles, indicating a strong match with the target product of Ceramic Tiles. There is no explicit mention of the company's operations or headquarters in Germany, which is required for a high geographic fit score. The company does not provide explicit evidence of global sourcing or importing, but as a large manufacturer, they might have international supply chains or partnerships. The company lacks both valid email and phone contacts, which raises concerns about their credibility and ease of communication. The company's language and product offerings suggest a large-scale manufacturer with a wide range of products, indicating a good scale fit for a B2B wholesaler or distributor.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "Not publicly available",
+    "contact_linkedin": "https://www.linkedin.com/company/marazzi-group",
+    "sources_used": [
+      "https://www.marazzigroup.com/",
+      "https://www.marazzigroup.com/contacts/",
+      "https://www.marazzigroup.com/about-us/",
+      "https://www.marazzigroup.com/blog/grande-lume-wins-the-red-dot-award-product-design-2026/"
+    ]
+  },
+  {
+    "company_name": "Agrob Buchtal",
+    "website": "https://agrob-buchtal.de/en",
+    "relevance_score": 22,
+    "score_breakdown": {
+      "product_match": 15,
+      "geo_fit": 15,
+      "import_signal": 0,
+      "credibility": 0,
+      "scale_fit": 7
+    },
+    "match_reason": "The company Agrob Buchtal seems to be related to the broader construction or building materials industry, but the exact product 'Ceramic Tiles' is not explicitly mentioned in the provided web content. The company has a website with a German top-level domain and an English version, suggesting it operates in Germany. There is no explicit evidence of global sourcing, importing, or being an exclusive foreign distributor in the provided web content. The company lacks both a valid email and phone number in the provided contact information, reducing its credibility as a potential buyer. The company's website and structure suggest it could be a sizable operation, possibly indicating a larger scale, but the exact scale is unclear from the provided information.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "Not publicly available",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://agrob-buchtal.de/en"
+    ]
+  }
+]

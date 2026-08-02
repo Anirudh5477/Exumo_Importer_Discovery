@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exumo — AI Importer Discovery Engine</title>
+  <meta name="description" content="AI-powered B2B importer and wholesaler discovery engine. Find verified direct buyers and distributors for any product in any country."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f0f2f5;
+      --surface: #ffffff;
+      --surface2: #f7f8fa;
+      --border: #e2e8f0;
+      --accent: #1a5276;
+      --accent-teal: #1abc9c;
+      --accent-teal-hover: #17a589;
+      --text: #1a202c;
+      --text-muted: #718096;
+      --text-dim: #4a5568;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---- Header ---- */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: var(--shadow);
+      flex-shrink: 0;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-right: 24px;
+      border-right: 1px solid var(--border);
+      margin-right: 24px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-teal));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .header-logo h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .header-search-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .header-input {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 7px 13px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      min-width: 0;
+    }
+
+    .header-input::placeholder { color: var(--text-muted); }
+    .header-input:focus {
+      border-color: var(--accent-teal);
+      box-shadow: 0 0 0 3px rgba(26,188,156,0.15);
+    }
+
+    .header-input.wide { flex: 1; max-width: 240px; }
+    .header-input-narrow { width: 80px; }
+
+    #run-btn {
+      background: var(--accent-teal);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 8px 20px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(26,188,156,0.3);
+    }
+    #run-btn:hover:not(:disabled) {
+      background: var(--accent-teal-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(26,188,156,0.35);
+    }
+    #run-btn:active:not(:disabled) { transform: translateY(0); }
+    #run-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+    /* Status & Error */
+    #status-bar {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      background: rgba(26,188,156,0.1);
+      border: 1px solid rgba(26,188,156,0.25);
+      font-size: 0.8rem;
+      color: #0e8069;
+      white-space: nowrap;
+    }
+
+    .spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(26,188,156,0.3);
+      border-top-color: var(--accent-teal);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    #error-bar {
+      display: none;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.25);
+      color: #c0392b;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 360px;
+    }
+
+    /* ---- Main content area ---- */
+    .page-body {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 32px 20px 48px;
+      overflow-y: auto;
+      gap: 20px;
+    }
+
+    /* ---- Rankings Sidebar ---- */
+    .rankings-sidebar {
+      width: 210px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: sticky;
+      top: 76px;
+      max-height: calc(100vh - 100px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-header {
+      padding: 12px 14px 10px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(26,82,118,0.06), rgba(26,188,156,0.06));
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .sidebar-header-icon {
+      font-size: 0.9rem;
+    }
+
+    .sidebar-header h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    #rankings-list {
+      overflow-y: auto;
+      flex: 1;
+      padding: 6px 0;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 14px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      animation: fadeUp 0.3s ease both;
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-item:hover { background: var(--surface2); }
+
+    .rank-num {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      min-width: 18px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .rank-num.top1 { color: #d4a017; }
+    .rank-num.top2 { color: #8d9399; }
+    .rank-num.top3 { color: #b5651d; }
+
+    .rank-link {
+      font-size: 0.73rem;
+      color: var(--accent-teal);
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+      min-width: 0;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .rank-link:hover { color: var(--accent-teal-hover); text-decoration: underline; }
+
+    .rank-arrow {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .sidebar-empty {
+      padding: 24px 14px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.73rem;
+      line-height: 1.6;
+    }
+    .sidebar-empty-icon { font-size: 1.5rem; opacity: 0.3; margin-bottom: 6px; }
+
+    /* ---- Targets Panel ---- */
+    .targets-panel {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .targets-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .targets-panel-header h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .count-badge {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 11px;
+      background: rgba(26,188,156,0.12);
+      color: #0e8069;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0 7px;
+    }
+
+    #targets-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* ---- Empty state ---- */
+    .targets-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 20px;
+      gap: 12px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .targets-empty-icon { font-size: 2.5rem; opacity: 0.3; }
+
+    /* ---- Company Target Card ---- */
+    .target-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+      animation: fadeUp 0.3s ease both;
+    }
+
+    .target-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-teal);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .card-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .score-pill {
+      flex-shrink: 0;
+      min-width: 30px;
+      height: 24px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0 9px;
+    }
+    /* 90-100: dark green | 75-89: green | 50-74: yellow | <50: red */
+    .score-pill.s-darkgreen { background: #064e3b; color: #6ee7b7; }
+    .score-pill.s-green     { background: #d1fae5; color: #065f46; }
+    .score-pill.s-yellow    { background: #fef3c7; color: #92400e; }
+    .score-pill.s-red       { background: #fee2e2; color: #991b1b; }
+
+    .card-type {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    /* Breakdown chips */
+    .card-breakdown {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+
+    .dim-chip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 3px 8px;
+      font-size: 0.68rem;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .dim-chip .dl { color: var(--text-muted); font-weight: 500; }
+    .dim-chip .dv { color: var(--text); font-weight: 700; }
+
+    /* Contact row */
+    .card-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .contact-tag {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 4px 9px;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .contact-tag.has-value { color: var(--text); }
+    .contact-tag a { color: inherit; text-decoration: none; }
+    .contact-tag a:hover { text-decoration: underline; color: var(--accent-teal); }
+
+    /* Action row */
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      text-decoration: none;
+      font-size: 1rem;
+      color: var(--text-muted);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+    .btn-link:hover {
+      background: var(--accent-teal);
+      border-color: var(--accent-teal);
+      color: #fff;
+    }
+
+    /* ---- Chat Modal ---- */
+    #chat-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-box {
+      background: #fff;
+      border-radius: 16px;
+      width: 520px;
+      max-width: 96vw;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 16px 60px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    .modal-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #1a5276, #1abc9c);
+    }
+
+    .modal-header-info { flex: 1; }
+    .modal-header-info .mh-name { font-size: 0.95rem; font-weight: 700; color: #fff; }
+    .modal-header-info .mh-url  { font-size: 0.75rem; color: rgba(255,255,255,0.75); margin-top: 2px; }
+
+    .modal-close-btn {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      border-radius: 8px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .modal-section {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+    }
+
+    .modal-section-title {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 860px) {
+      .rankings-sidebar { display: none; }
+    }
+    @media (max-width: 600px) {
+      .header-input.wide { max-width: 160px; }
+      .page-body { padding: 20px 14px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======== HEADER ======== -->
+<header>
+  <div class="header-logo">
+    <div class="logo-icon">🔍</div>
+    <h1>Exumo</h1>
+  </div>
+
+  <form id="discovery-form" class="header-search-row" autocomplete="off">
+    <input id="product" class="header-input wide" type="text" placeholder="Product (e.g. Ceramic Tiles)" required />
+    <input id="country" class="header-input wide" type="text" placeholder="Country (e.g. Germany)" required />
+    <input id="top_n"   class="header-input header-input-narrow" type="number" min="1" max="20" value="10" required />
+    <button id="run-btn" type="submit">▶ Run Discovery</button>
+    <div id="status-bar">
+      <div class="spinner"></div>
+      <span id="status-text">Initialising…</span>
+    </div>
+    <div id="error-bar"></div>
+  </form>
+</header>
+
+<!-- ======== PAGE BODY ======== -->
+<div class="page-body">
+
+  <!-- Rankings Sidebar -->
+  <aside class="rankings-sidebar" id="rankings-sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-header-icon">🏆</span>
+      <h3>Rankings</h3>
+    </div>
+    <div id="rankings-list">
+      <div class="sidebar-empty" id="rankings-empty">
+        <div class="sidebar-empty-icon">📊</div>
+        <div>Run a discovery to see top sites here</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Panel -->
+  <div class="targets-panel">
+
+    <div class="targets-panel-header">
+      <h2>Top Targets</h2>
+      <span class="count-badge" id="result-count"></span>
+    </div>
+
+    <div id="targets-list">
+      <div class="targets-empty" id="targets-empty">
+        <div class="targets-empty-icon">🏢</div>
+        <div>Verified importers &amp; wholesalers will appear here<br/>after you run a discovery.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script>
+  /* ============================================================
+     STATE
+  ============================================================ */
+  let allResults = [];
+
+  /* ============================================================
+     DOM REFS
+  ============================================================ */
+  const form          = document.getElementById('discovery-form');
+  const btn           = document.getElementById('run-btn');
+  const statusBar     = document.getElementById('status-bar');
+  const statusTxt     = document.getElementById('status-text');
+  const errorBar      = document.getElementById('error-bar');
+  const targetsList   = document.getElementById('targets-list');
+  const targetsEmpty  = document.getElementById('targets-empty');
+  const resultCount   = document.getElementById('result-count');
+  const rankingsList  = document.getElementById('rankings-list');
+  const rankingsEmpty = document.getElementById('rankings-empty');
+
+  /* ============================================================
+     STATUS CYCLE
+  ============================================================ */
+  const STATUS_STEPS = [
+    'Generating search queries with AI…',
+    'Executing DuckDuckGo searches…',
+    'Verifying candidates with LLM…',
+    'Deep scraping company websites…',
+    'Extracting contact information…',
+    'Scoring and ranking results…',
+    'Finalising output…',
+  ];
+  let stepTimer = null;
+
+  function startStatusCycle() {
+    let i = 0;
+    statusTxt.textContent = STATUS_STEPS[0];
+    statusBar.style.display = 'flex';
+    stepTimer = setInterval(() => {
+      i = (i + 1) % STATUS_STEPS.length;
+      statusTxt.textContent = STATUS_STEPS[i];
+    }, 8000);
+  }
+
+  function stopStatusCycle() {
+    if (stepTimer) { clearInterval(stepTimer); stepTimer = null; }
+    statusBar.style.display = 'none';
+  }
+
+  /* ============================================================
+     HELPERS
+  ============================================================ */
+  function scoreClass(s) {
+    if (s >= 90) return 's-darkgreen';
+    if (s >= 75) return 's-green';
+    if (s >= 50) return 's-yellow';
+    return 's-red';
+  }
+
+  function dimLabel(key) {
+    const map = { product_match: 'Product', geo_fit: 'Geo', import_signal: 'Import', credibility: 'Cred', scale_fit: 'Scale' };
+    return map[key] || key;
+  }
+
+  function dimMax(key) {
+    const m = { product_match: 30, geo_fit: 15, import_signal: 25, credibility: 15, scale_fit: 15 };
+    return m[key] || '?';
+  }
+
+  function ensureHttp(url) {
+    if (!url) return '#';
+    return url.startsWith('http') ? url : 'https://' + url;
+  }
+
+  function inferType(r) {
+    const reason = (r.match_reason || '').toLowerCase();
+    if (reason.includes('wholesale')) return 'Wholesaler / Distributor';
+    if (reason.includes('import'))    return 'Importer / Distributor';
+    if (reason.includes('retail') || reason.includes('chain')) return 'Retail Chain';
+    if (reason.includes('organic'))   return 'Organic Importer';
+    if (reason.includes('ethnic') || reason.includes('south asian') || reason.includes('indian')) return 'Ethnic Importer';
+    return 'Importer / Wholesaler';
+  }
+
+  /* ============================================================
+     RENDER SIDEBAR RANKINGS
+  ============================================================ */
+  function renderRankings(results) {
+    Array.from(rankingsList.children).forEach(c => {
+      if (c !== rankingsEmpty) c.remove();
+    });
+
+    if (!results || results.length === 0) {
+      rankingsEmpty.style.display = 'block';
+      return;
+    }
+
+    rankingsEmpty.style.display = 'none';
+
+    results.forEach((r, idx) => {
+      const rank = idx + 1;
+      const url  = r.website && r.website !== 'N/A' ? ensureHttp(r.website) : null;
+      const label = url
+        ? url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+        : (r.company_name || 'Unknown');
+
+      const item = document.createElement('div');
+      item.className = 'rank-item';
+      item.style.animationDelay = `${idx * 40}ms`;
+
+      const numClass = rank === 1 ? 'top1' : rank === 2 ? 'top2' : rank === 3 ? 'top3' : '';
+
+      item.innerHTML = url
+        ? `<span class="rank-num ${numClass}">#${rank}</span>
+           <a class="rank-link" href="${url}" target="_blank" rel="noopener" title="${url}">${label}</a>
+           <span class="rank-arrow">↗</span>`
+        : `<span class="rank-num ${numClass}">#${rank}</span>
+           <span class="rank-link" style="color:var(--text-muted);cursor:default;">${label}</span>`;
+
+      rankingsList.appendChild(item);
+    });
+  }
+
+  /* ============================================================
+     RENDER CARDS
+  ============================================================ */
+  function renderTargetCards(results) {
+    Array.from(targetsList.children).forEach(c => {
+      if (c !== targetsEmpty) c.remove();
+    });
+
+    renderRankings(results);
+
+    if (!results || results.length === 0) {
+      targetsEmpty.style.display = 'flex';
+      resultCount.style.display = 'none';
+      return;
+    }
+
+    targetsEmpty.style.display = 'none';
+    resultCount.style.display = 'inline-flex';
+    resultCount.textContent = results.length;
+
+    results.forEach((r, idx) => targetsList.appendChild(buildTargetCard(r, idx)));
+  }
+
+  function buildTargetCard(r, idx) {
+    const score  = r.relevance_score;
+    const bd     = r.score_breakdown || {};
+    const emailOk = r.contact_email    && !r.contact_email.includes('Not');
+    const phoneOk = r.contact_phone    && !r.contact_phone.includes('Not');
+    const liOk    = r.contact_linkedin && !r.contact_linkedin.includes('Not');
+    const webOk   = r.website && r.website !== 'N/A';
+
+    const dimChips = Object.entries(bd).map(([k, v]) =>
+      `<div class="dim-chip"><span class="dl">${dimLabel(k)}</span><span class="dv">${v}/${dimMax(k)}</span></div>`
+    ).join('');
+
+    const div = document.createElement('div');
+    div.className = 'target-card';
+    div.style.animationDelay = `${idx * 55}ms`;
+
+    div.innerHTML = `
+      <div class="card-head">
+        <div class="card-name">${r.company_name || 'Unknown Company'}</div>
+        <div class="score-pill ${scoreClass(score)}">${score}</div>
+      </div>
+      <div class="card-type">${inferType(r)}</div>
+      <div class="card-desc">${r.match_reason || 'No description available.'}</div>
+      ${dimChips ? `<div class="card-breakdown">${dimChips}</div>` : ''}
+      <div class="card-contacts">
+        ${emailOk ? `<div class="contact-tag has-value">📧 <a href="mailto:${r.contact_email}">${r.contact_email}</a></div>` : ''}
+        ${phoneOk ? `<div class="contact-tag has-value">📞 <a href="tel:${r.contact_phone}">${r.contact_phone}</a></div>` : ''}
+        ${liOk    ? `<div class="contact-tag has-value">💼 <a href="${r.contact_linkedin}" target="_blank" rel="noopener">LinkedIn</a></div>` : ''}
+        ${!emailOk && !phoneOk && !liOk ? '<div class="contact-tag">No contact info found</div>' : ''}
+      </div>
+      <div class="card-actions">
+        ${webOk ? `<a class="btn-link" href="${ensureHttp(r.website)}" target="_blank" rel="noopener" title="Visit ${r.company_name} website" style="width:auto;padding:0 14px;gap:6px;font-size:0.8rem;font-weight:600;">↗ Visit Website</a>` : ''}
+      </div>
+    `;
+    return div;
+  }
+
+  /* ============================================================
+     FORM SUBMIT
+  ============================================================ */
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    errorBar.style.display = 'none';
+    errorBar.textContent = '';
+    allResults = [];
+    renderTargetCards([]);
+    btn.disabled = true;
+    startStatusCycle();
+
+    const payload = {
+      product: document.getElementById('product').value.trim(),
+      country: document.getElementById('country').value.trim(),
+      top_n:   parseInt(document.getElementById('top_n').value, 10) || 10,
+    };
+
+    try {
+      const resp = await fetch('/api/discover', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await resp.json();
+      stopStatusCycle();
+      btn.disabled = false;
+
+      if (!resp.ok || data.error) {
+        errorBar.style.display = 'block';
+        errorBar.textContent = `❌ ${data.error || 'Unknown error.'}`;
+        return;
+      }
+
+      if (!data.length) {
+        errorBar.style.display = 'block';
+        errorBar.textContent = 'No verified importers found. Try a different product or country.';
+        return;
+      }
+
+      allResults = data;
+      renderTargetCards(data);
+
+    } catch (err) {
+      stopStatusCycle();
+      btn.disabled = false;
+      errorBar.style.display = 'block';
+      errorBar.textContent = `❌ Network error: ${err.message}`;
+    }
+  });
+</script>
+</body>
+</html>

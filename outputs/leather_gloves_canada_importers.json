@@ -1,0 +1,142 @@
+[
+  {
+    "company_name": "Mega Wholesaler Inc",
+    "website": "https://megawholesalerinc.com/wholesale-gloves-suppliers/?srsltid=AfmBOoqnyOUuOBbg-JTvPFDrxyob8o_5u0jSTTEfm_JgpAQoN-IWLnex",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly mentions offering leather gloves among their products, making them a direct match for the target product. Mega Wholesaler Inc is described as a leading wholesale company in Canada, indicating they are headquartered or primarily operating in the target country. Although the company mentions working closely with suppliers, there is no explicit evidence of global sourcing or importing, but their language suggests a B2B wholesale operation which may involve cross-border transactions. Both a valid email and phone number are available for the company, indicating high credibility and ease of contact. The company is described as a leading wholesale company with a wide range of products for various industries, suggesting they operate on a large scale.",
+    "contact_email": "sales@megawholesalerinc.com",
+    "contact_phone": "+19057069841",
+    "contact_linkedin": "https://www.linkedin.com/company/mega-wholesaler-inc-ca",
+    "sources_used": [
+      "https://megawholesalerinc.com/wholesale-gloves-suppliers/?srsltid=AfmBOoqnyOUuOBbg-JTvPFDrxyob8o_5u0jSTTEfm_JgpAQoN-IWLnex",
+      "https://megawholesalerinc.com/wholesale-gloves-suppliers/?srsltid=AfmBOoqnyOUuOBbg-JTvPFDrxyob8o_5u0jSTTEfm_JgpAQoN-IWLnex#menu-main-mega-menu",
+      "https://megawholesalerinc.com/about-us/",
+      "https://megawholesalerinc.com/contact-us/"
+    ]
+  },
+  {
+    "company_name": "Wilson Wholesale Supply",
+    "website": "https://wilsonwholesalesupply.com/industrial-safety/hand-protection/",
+    "relevance_score": 77,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 7
+    },
+    "match_reason": "The company explicitly mentions carrying leather gloves as part of their hand protection products, indicating a strong match for the target product. The company is headquartered in Canada, as evidenced by their mention of meeting Canadian workplace safety requirements and offering local delivery in the Fraser Valley, indicating a strong geographic fit. While the company does not explicitly state that they import products, their language suggests a wholesale supply business which may involve cross-border sourcing, but there's no clear evidence of importing. The company has both a valid email and phone number available, indicating a high level of credibility and ease of contact. The company's language suggests they supply businesses across the Fraser Valley and beyond, and they offer products in bulk, indicating a moderate to large scale operation.",
+    "contact_email": "WilsonWholesaleSupply@Gmail.com",
+    "contact_phone": "+16049973247",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://wilsonwholesalesupply.com/industrial-safety/hand-protection/",
+      "https://wilsonwholesalesupply.com/",
+      "https://wilsonwholesalesupply.com/about/",
+      "https://wilsonwholesalesupply.com/contact/"
+    ]
+  },
+  {
+    "company_name": "Gregg Distributors LP",
+    "website": "https://greggdistributors.ca/Safety/Gloves-and-Hand-Protection/Leather-Work-Gloves",
+    "relevance_score": 62,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 0,
+      "scale_fit": 7
+    },
+    "match_reason": "The company explicitly distributes leather work gloves, which matches the target product of leather gloves. The company has a website with a Canadian domain and appears to operate in Canada, indicating a strong geographic fit. There is no explicit evidence of global sourcing or importing on the provided website, but the company is a distributor, which may imply some level of importing. The company lacks both a publicly available email and phone number, which reduces its credibility as a potential buyer. The company is a distributor, which suggests a larger scale operation, but without more information, it's difficult to determine the exact scale.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "Not publicly available",
+    "contact_linkedin": "Not listed",
+    "sources_used": []
+  },
+  {
+    "company_name": "Milwaukee Tool",
+    "website": "https://www.milwaukeetool.ca/products/work-gear/gloves",
+    "relevance_score": 62,
+    "score_breakdown": {
+      "product_match": 15,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company sells gloves, but the exact target product 'Leather Gloves' is not explicitly mentioned, instead, they focus on nitrile, polyurethane, and latex dipped gloves. The company has a website with a Canadian domain and products page, indicating they operate in Canada. There is no explicit evidence of global sourcing or importing, but the company does offer a wide range of gloves, which could imply a potential for importing. Only the phone number is available, while the email is missing, which reduces the credibility of the contact information. The company appears to be a large-scale tool and equipment manufacturer with a wide range of products, including gloves, which suggests they are a significant player in the industry.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+12356201400",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.milwaukeetool.ca/products/work-gear/gloves",
+      "https://www.milwaukeetool.ca/products/storage-solutions/packout",
+      "https://www.milwaukeetool.ca/contact"
+    ]
+  },
+  {
+    "company_name": "Canadian Tire",
+    "website": "https://www.canadiantire.ca/en/cat/tools-hardware/work-wear-safety-gear/work-gloves-DC0002102.html",
+    "relevance_score": 55,
+    "score_breakdown": {
+      "product_match": 15,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 0,
+      "scale_fit": 15
+    },
+    "match_reason": "Canadian Tire sells work gloves, which is a related broad category to leather gloves, but the exact product is not the main focus. Canadian Tire is headquartered and primarily operating in Canada, as indicated by their website and business presence. There is no explicit evidence of global sourcing or importing on the provided website, but as a large retailer, they may engage in cross-border trade. No contacts were found, with both email and phone numbers missing, which raises concerns about the credibility and ease of contact. Canadian Tire is a large-scale retailer with multiple locations across Canada, indicating a significant scale fit for B2B wholesale or distribution.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "Not publicly available",
+    "contact_linkedin": "Not listed",
+    "sources_used": []
+  },
+  {
+    "company_name": "Walmart",
+    "website": "https://www.walmart.ca/",
+    "relevance_score": 55,
+    "score_breakdown": {
+      "product_match": 15,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 0,
+      "scale_fit": 15
+    },
+    "match_reason": "Walmart is a large retailer that sells a wide range of products, including clothing and accessories, which could encompass leather gloves, but the exact product is not the main focus. The company has a website specifically for Canada, indicating it is primarily operating in the country. There is no explicit evidence of global sourcing or importing in the provided web content, but as a large retailer, Walmart likely engages in cross-border trade, although this is not directly stated. The company's contact information, including email and phone, is missing, which reduces its credibility as a potential buyer or importer. Walmart is a well-known large-scale retailer with multiple locations, indicating it is a major B2B wholesaler or distributor.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "Not publicly available",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.walmart.ca/"
+    ]
+  },
+  {
+    "company_name": "Bob Dale Gloves (BDG)",
+    "website": "https://www.bobdalegloves.com/safety-feature-solutions/features/canadian-made/",
+    "relevance_score": 52,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 0,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly mentions 'Genuine Leather' as a feature in their products, which includes gloves, indicating a strong relevance to the target product 'Leather Gloves'. The company is 'proudly designed and handcrafted in Canada' and has a 'Canadian Made' feature, indicating they are headquartered or primarily operating in Canada. There is no explicit evidence of global sourcing or importing, as the company emphasizes 'locally made' and 'Canadian Made' products, suggesting they may not import goods. Only the phone number is available, while the email is missing, indicating incomplete contact information. The company has a comprehensive website with various product categories, industries, and a sales team, suggesting they operate on a larger scale, potentially as a B2B wholesaler or distributor.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+18006617303",
+    "contact_linkedin": "https://www.linkedin.com/company/bob-dale-gloves-&-imports",
+    "sources_used": [
+      "https://www.bobdalegloves.com/safety-feature-solutions/features/canadian-made/",
+      "https://www.bobdalegloves.com/products/",
+      "https://www.bobdalegloves.com/safety-feature-solutions/features/food-contact/",
+      "https://www.bobdalegloves.com/about-bdg/"
+    ]
+  }
+]

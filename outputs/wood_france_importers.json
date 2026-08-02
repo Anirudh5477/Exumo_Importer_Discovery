@@ -1,0 +1,204 @@
+[
+  {
+    "company_name": "Henry Timber",
+    "website": "https://www.henry-timber.com/en/henry-timber/henry-timber.html",
+    "relevance_score": 92,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 25,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly imports and distributes wood, which is the exact target product, with a wide range of wood species and products. The company is headquartered in France, as it supplies products to a client base of wholesalers and distributors throughout France, indicating primary operations in the country. There is explicit evidence of global sourcing and importing, as the company imports wood from various regions around the world, including South-East Asia, Africa, North and South America, Russia, and Europe. Only one contact method, the phone number, was found to be available, while the email is missing, which reduces the credibility score. The company's language indicates a large-scale B2B wholesaler, distributor, or chain, as it has been a family business since 1895, is one of Europe’s leading timber trading companies, and stocks around a hundred different species of wood.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+33476645006",
+    "contact_linkedin": "https://fr.linkedin.com/company/henry-timber",
+    "sources_used": [
+      "https://www.henry-timber.com/en/henry-timber/henry-timber.html",
+      "https://www.henry-timber.com/contact/"
+    ]
+  },
+  {
+    "company_name": "Farin et Fils",
+    "website": "https://www.farinetfils.fr/lien-fournisseur+france+protac-89",
+    "relevance_score": 92,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 25,
+      "credibility": 15,
+      "scale_fit": 7
+    },
+    "match_reason": "The company explicitly works with wood, as indicated by their involvement in the second transformation of wood, including the purchase of wooden planks, drying, planing, preservation treatment, and finishing, which directly relates to the target product. The company is headquartered in France, as evidenced by their address in Le Thuit de l'Oison, which suggests they are primarily operating in the target country. The company mentions that the woods they use are 'imported in function of the essence, usage, and desired quality', which indicates explicit evidence of cross-border importing of the target product. Both a valid email and phone number were successfully scraped from the company's website, indicating high credibility and ease of contact. The company's language and services, including renovation, new construction, and heritage work, suggest they are a smaller to medium-sized business, possibly not a large-scale wholesaler but still a relevant buyer in the French market.",
+    "contact_email": "contact@farinetfils.fr",
+    "contact_phone": "+33244100349",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.farinetfils.fr/lien-fournisseur+france+protac-89",
+      "https://www.farinetfils.fr/contact"
+    ]
+  },
+  {
+    "company_name": "FrenchTimber",
+    "website": "https://www.frenchtimber.com/en/suppliers/",
+    "relevance_score": 92,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 25,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly deals with wood products, including sawn timber, which matches the target product of wood. The company is headquartered in France, as indicated by its address in Paris, which perfectly fits the target country. The company provides information and acts as a gateway for international buyers to access French wood products, indicating a role in facilitating imports. Only the phone number is available, while the email is missing, which limits the contact completeness and thus the credibility score. The company's involvement in international business, attendance at trade fairs, and provision of information to a wide range of buyers suggest it operates on a significant scale.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+33156693592",
+    "contact_linkedin": "http://linkedin.com/company/frenchtimber",
+    "sources_used": [
+      "https://www.frenchtimber.com/en/suppliers/",
+      "https://www.frenchtimber.com/en/contact-us/",
+      "https://www.frenchtimber.com/en/about-us/",
+      "https://www.frenchtimber.com/en/suppliers/companies-supplying-other-types-of-products/"
+    ]
+  },
+  {
+    "company_name": "Grosjean Solutions Bois",
+    "website": "https://www.grosjean-bois.com/",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly deals with wood products such as panneaux, stratifiés, parquets, terrasse, bardage, constructions bois, which directly matches the target product of wood. The company is headquartered in France, as indicated by their operations and delivery services focused on Ile-de-France, suggesting a strong geographic fit. There is no explicit evidence of global sourcing or importing, but the company does mention a wide range of wood products and a large stock, which might imply some level of cross-border sourcing, although it's not clearly stated. Both a valid email and phone number are available for contact, indicating a high level of credibility and ease of communication. The company has a significant stock, a fleet of 10 trucks for daily deliveries, and offers various services including coaching and a wide range of products, suggesting it operates on a large enough scale to be considered a substantial B2B player.",
+    "contact_email": "contact@grosjean-bois.com",
+    "contact_phone": "+33169758888",
+    "contact_linkedin": "https://www.linkedin.com/company/5160127",
+    "sources_used": [
+      "https://www.grosjean-bois.com/",
+      "https://www.grosjean-bois.com/contact/"
+    ]
+  },
+  {
+    "company_name": "EG.Bois",
+    "website": "https://www.egbois.fr/",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly deals with wood and wood-derived products, making it a strong match for the target product. The company is headquartered in France, with multiple locations in Île-de-France and Normandie, indicating a strong geographic fit. Although the company does not explicitly mention importing, it does mention selecting suppliers and accompanying clients with personalized advice, suggesting some level of global sourcing or importing capability. Both a valid email and phone number are available for the company, indicating high credibility. With a network of 19 agencies and a wide range of products, the company appears to be a large-scale B2B wholesaler or distributor.",
+    "contact_email": "contact@egbois.fr",
+    "contact_phone": "+33147817474",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.egbois.fr/",
+      "https://www.egbois.fr/nous-contacter.html"
+    ]
+  },
+  {
+    "company_name": "IMCA PANELS",
+    "website": "https://www.imca-panels.fr/",
+    "relevance_score": 85,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly imports and distributes wood products, including panneaux en bois massif and contreplaqués, which are types of wood, making them a strong match for the target product. The company is headquartered in France, with their agency based in Lille, and they cover the entire French market, indicating a strong geographic fit. Although the company does not explicitly mention importing wood from other countries, they do mention selecting the best French and European partners, suggesting some level of cross-border sourcing or collaboration, but not enough to indicate explicit importing. The company has both a valid email and phone number available, indicating a high level of credibility and ease of contact. The company's language suggests they are a large-scale B2B wholesaler or distributor, as they mention serving professionals, including negociants, industriels, and grands bâtiments, and covering large markets, indicating a strong scale fit.",
+    "contact_email": "contact@imca-panels.com",
+    "contact_phone": "+33632863145",
+    "contact_linkedin": "https://www.linkedin.com/company/imca-panels",
+    "sources_used": [
+      "https://www.imca-panels.fr/"
+    ]
+  },
+  {
+    "company_name": "Bourgoin Bois",
+    "website": "https://www.bourgoinbois.com/",
+    "relevance_score": 84,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 25,
+      "credibility": 7,
+      "scale_fit": 7
+    },
+    "match_reason": "The company explicitly deals with a wide variety of wood products, including imported and domestic woods, indicating a strong match with the target product. The company is headquartered in France, as indicated by their involvement in local events and their long history of operation within the country. The company mentions selecting, buying, and selling a diversity of wood essences, including imported woods, which suggests they are involved in importing wood products. Only the phone number is available, while the email is missing, which reduces the credibility score since only one contact method was found. The company has a large stock of over 3000m² and has been in operation for a long time, indicating they are likely a medium to large-scale B2B wholesaler or distributor.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+33251719400",
+    "contact_linkedin": "Not listed",
+    "sources_used": [
+      "https://www.bourgoinbois.com/",
+      "https://www.bourgoinbois.com/nous-contacter"
+    ]
+  },
+  {
+    "company_name": "Cif Bois",
+    "website": "https://www.cifbois.com/",
+    "relevance_score": 77,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 15,
+      "scale_fit": 7
+    },
+    "match_reason": "The company explicitly deals with various wood products, including bois de construction and bois décoratifs, which directly matches the target product of wood. The company is headquartered in France, as indicated by the address ZI de la Poudrette, 6 Avenue du 14 Juillet, 93320 – Les Pavillons-sous-Bois, showing a strong geographic fit. There is no explicit evidence of global sourcing or importing, but the company does offer various wood products and services, suggesting potential for cross-border trade without clear indication. Both a valid email and phone number are available for the company, indicating high credibility as a potential buyer/importer. The company's offerings, including atelier découpe sur-mesure and various wood products, suggest a moderate to large scale operation, but the exact scale is not clearly indicated.",
+    "contact_email": "contact@cifbois.com",
+    "contact_phone": "+33148475139",
+    "contact_linkedin": "http://linkedin.com/company/cif-bois",
+    "sources_used": [
+      "https://www.cifbois.com/",
+      "https://www.cifbois.com/contact/"
+    ]
+  },
+  {
+    "company_name": "SM BOIS",
+    "website": "https://www.smbois.com/",
+    "relevance_score": 77,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 7,
+      "scale_fit": 15
+    },
+    "match_reason": "The company explicitly deals with wood products, including various types for construction, renovation, and gardening, making it a strong match for the target product. The company is headquartered near Paris, France, and serves clients across France, indicating it is primarily operating in the target country. There is no explicit mention of importing wood from other countries, but the company does describe itself as a 'négoce bois', which could imply involvement in wholesale trade, potentially including imports. Only the phone number is available, while the email is missing, indicating partial contact information. The company offers more than 10,000 products and has a significant online presence, suggesting it operates on a relatively large scale, likely beyond a small retailer.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+33160260344",
+    "contact_linkedin": "https://www.linkedin.com/company/smbois",
+    "sources_used": [
+      "https://www.smbois.com/",
+      "https://www.smbois.com/contact"
+    ]
+  },
+  {
+    "company_name": "Peltier Bois",
+    "website": "https://www.peltierbois.com/groupe-peltier/peltier-bois-paris/",
+    "relevance_score": 69,
+    "score_breakdown": {
+      "product_match": 30,
+      "geo_fit": 15,
+      "import_signal": 10,
+      "credibility": 7,
+      "scale_fit": 7
+    },
+    "match_reason": "The company explicitly sells various types of wood products, including bois massifs, bois exotique, and parquets, which directly matches the target product of wood. The company is headquartered in France, with multiple locations mentioned, including Paris and Presles en Brie, indicating a strong geographic fit. Although the company does not explicitly mention importing wood, the variety of wood products they sell, including exotic and American woods, suggests they may be sourcing from international suppliers. The company has a phone number available, but the email is missing, which somewhat limits their credibility as a contactable business. The company's presence in multiple locations and their range of products suggest they are more than a small retailer, possibly indicating a medium to large-scale operation.",
+    "contact_email": "Not publicly available",
+    "contact_phone": "+33299948181",
+    "contact_linkedin": "https://fr.linkedin.com/company/peltier-bois",
+    "sources_used": [
+      "https://www.peltierbois.com/groupe-peltier/peltier-bois-paris/",
+      "https://www.peltierbois.com/nos-produits/production-sur-mesure/",
+      "https://www.peltierbois.com/contact/"
+    ]
+  }
+]
